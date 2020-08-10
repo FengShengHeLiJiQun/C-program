@@ -29,9 +29,11 @@ Node* ReverseK(Node* head, int k);
 int main()
 {
 	Node *head , *p, *q;
-	int i, n, a;
+	int i, n, a,k;
 	printf("Please enter the number of nodes:\n");
 	scanf("%d", &n);
+	printf("Please enter the number of k group:\n");
+	scanf("%d", &k);
 	head = NULL;
 	printf("Please enter the node value:\n");
 	for (i = 0; i < n; i ++)
@@ -61,7 +63,7 @@ int main()
 	printf("\n");
 	
 	//Output inverted linked list content.
-	head = ReverseK(head, 3);
+	head = ReverseK(head, k);
 	printf("The inverted linked list is :\n");
 	Node *temp2 = head;
 	//The output list
@@ -71,7 +73,7 @@ int main()
 		temp2 = temp2 -> next;
 	}
 	printf("\n");
-
+	free(p);
 	return 0;
 }
 
